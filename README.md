@@ -27,3 +27,10 @@ Options:
   --option       Option description
   --long-option  Long option description
 ```
+
+## Implementaion details
+
+Commands are created from all exported functions of `Deno.mainModule`.  
+Options are parsed from the function signature.  
+Descriptions are parsed from comments inside the function.  
+ES2018 guarantees that comments inside of a function are always preserved.  
