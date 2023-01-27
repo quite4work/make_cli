@@ -1,19 +1,29 @@
 Highly experimental CLI builder
 ===============================
 
-Example:
+Example adding CLI to `./app.ts`:
 
 ```js
 #!/usr/bin/env deno run --unstable -A
 
-import "https://deno.land/x/make_cli/mod.ts";
+import "https://deno.land/x/make_cli@0.0.1/mod.ts";
 
-export function test(param, optParam1, optParam2, optParam3) {
-  // @test        Command description
-  // --param      Description0
-  // --opt-param1 Description1
-  // --opt-param2 Description2
-  // --opt-param3 Description3
-  console.log([param, optParam1, optParam2, optParam3]);
+export function echo(option, longOption) {
+  // @echo         Prints options to console
+  // --option      Option description
+  // --long-option Long option description
+  console.log({ option, longOption });
 }
+```
+
+Output of ` ./app.ts echo --help`:
+
+```sh
+app.ts echo
+
+Prints options to console
+
+Options:
+  --option       Option description
+  --long-option  Long option description
 ```
