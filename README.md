@@ -1,7 +1,9 @@
 Highly experimental CLI builder
 ===============================
 
-Example adding CLI to `./app.ts`:
+## Example
+
+Adding CLI to `./app.ts`:
 
 ```js
 #!/usr/bin/env deno run --unstable -A
